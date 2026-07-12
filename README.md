@@ -16,9 +16,7 @@ Each stage was motivated by a specific diagnosed failure mode in the previous on
 |---|---|---|---|
 | 1 | `Vanilla_GAN` | Fully connected GAN | Mode collapse by epoch 300. Loss D ~0.005, Loss G ~8.5. Expected — FC layers destroy spatial structure. |
 | 2 | `DCGAN_STAGE_1` | DCGAN (paper-spec, 20×20) | Partial mode collapse. Binary output collapsed to single structure. Blurry continuous output. 20×20 resolution too low for structural fidelity. |
-| 3 | `STABILIZED_DCGAN` | DCGAN with stabilisation techniques | Nash equilibrium (~0.693) achieved. Periodic hole lattice and waveguide defect channel topology learned. Blurry and low contrast — DCGAN's distribution-matching ceiling. |
-| 4 | `V0_WGAN-GP` | WGAN-GP (baseline config) | Strong contrast improvement over DCGAN. Sharp holes, visible waveguide defect channel. Some edge noise and lattice degradation at corners — motivated resolution upgrade. |
-| 5 | `V3_WGAN-GP` | WGAN-GP (tuned, 256×256) | Sharpest output so far. Clean periodic lattice, distinct hole geometry, waveguide defect channel clearly visible. Research ongoing. |
+| 3 | `STABILIZED_DCGAN` | DCGAN with stabilisation techniques | Nash equilibrium (~0.693) achieved. Periodic hole lattice and waveguide defect channel topology 
 
 ---
 
@@ -35,8 +33,6 @@ photonic-crystal-gan/
 ├── Vanilla_GAN/                    # Stage 1 — FC GAN baseline
 ├── DCGAN_STAGE_1/                  # Stage 2 — DCGAN, paper-spec 20×20
 ├── STABILIZED_DCGAN/               # Stage 3 — stabilised DCGAN, 128×128
-├── V0_WGAN-GP/                     # Stage 4 — WGAN-GP baseline
-├── V3_WGAN-GP/                     # Stage 5 — WGAN-GP tuned, 256×256 (current best)
 └── pixel_mapping/                  # Validation — silicon hole diameter measurement
 ```
 
@@ -80,14 +76,4 @@ Topology learned. Periodic lattice and waveguide defect channel visible. Blurry 
 
 ---
 
-### V0 WGAN-GP — 128×128
-![V0 WGAN-GP Output](V0_WGAN-GP/assets/output.png)
 
-Strong contrast improvement over DCGAN immediately. Sharp holes, well-defined periodic lattice, waveguide defect channel clearly visible. Some edge noise — motivated resolution upgrade and preprocessing cleanup in V3.
-
----
-
-### V3 WGAN-GP — 256×256
-![V3 WGAN-GP Output](V3_WGAN-GP/assets/output.png)
-
-Sharpest result. Clean periodic lattice, distinct circular holes, waveguide defect channel clearly visible. Closest to real dataset structure so far.
