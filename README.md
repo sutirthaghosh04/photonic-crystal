@@ -22,7 +22,7 @@ Each stage was motivated by a specific diagnosed failure mode in the previous on
 
 ## Current State
 
-Active research. V3 WGAN-GP is the current best result. The pipeline is being tuned further with the goal of producing outputs that pass the >=75% Lumerical FDTD transmission efficiency threshold consistently.
+Active research. The pipeline is being tuned further with the goal of producing outputs that pass the >=75% Lumerical FDTD transmission efficiency threshold consistently.
 
 ---
 
